@@ -1,0 +1,20 @@
+package br.com.alexandre.demoauth;
+
+import org.springframework.http.MediaType;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+
+    @GetMapping(value = "/employee/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Employee getEmployee(@AuthenticationPrincipal Jwt principal, @PathVariable String id) {
+        System.out.println(principal.toString());
+        var username = principal.getClaimAsString("preferred_username");
+        System.out.println(principal.getClaimAsString("preferred_username"));
+        return new Employee(id, username);
+    }
+}
