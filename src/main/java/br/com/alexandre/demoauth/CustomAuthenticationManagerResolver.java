@@ -25,6 +25,7 @@ public class CustomAuthenticationManagerResolver implements AuthenticationManage
 
     @Override
     public AuthenticationManager resolve(HttpServletRequest context) {
+
 //        for (Map.Entry<RequestMatcher, AuthenticationManager> entry : this.authenticationManagers.entrySet()) {
 //            if (authenticationManager..getKey().matches(context)) {
 //                return entry.getValue();
