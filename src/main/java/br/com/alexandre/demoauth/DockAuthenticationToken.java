@@ -1,33 +1,18 @@
 package br.com.alexandre.demoauth;
 
-import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-public class DockAuthenticationToken extends AbstractAuthenticationToken {
+public class DockAuthenticationToken extends UsernamePasswordAuthenticationToken {
 
-    private Object credentials;
-
-    public DockAuthenticationToken(Object credentials) {
-        super((Collection) null);
-        this.credentials = credentials;
-        this.setAuthenticated(false);
+    public DockAuthenticationToken(Object principal, Object credentials) {
+        super(principal, credentials);
     }
 
-    public DockAuthenticationToken(Object credentials, Collection<? extends GrantedAuthority> authorities) {
-        super(authorities);
-        this.credentials = credentials;
-        this.setAuthenticated(true);
+    public DockAuthenticationToken(Object principal, Object credentials, Collection<? extends GrantedAuthority> authorities) {
+        super(principal, credentials, authorities);
     }
 
-    @Override
-    public Object getCredentials() {
-        return this.credentials;
-    }
-
-    @Override
-    public Object getPrincipal() {
-        return null;
-    }
 }

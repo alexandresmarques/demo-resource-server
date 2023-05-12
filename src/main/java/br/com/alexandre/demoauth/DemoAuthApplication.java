@@ -12,10 +12,4 @@ public class DemoAuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoAuthApplication.class, args);
     }
-
-    @Bean
-    @Primary
-    OAuth2ResourceServerProperties oAuth2ResourceServerProperties() {
-        return new OAuth2ResourceServerProperties();
-    }
 }
