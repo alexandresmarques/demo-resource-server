@@ -1,4 +1,4 @@
-package br.com.alexandre.demoauth;
+package br.com.alexandre.demoauth.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

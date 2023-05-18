@@ -1,4 +1,4 @@
-package br.com.alexandre.demoauth;
+package br.com.alexandre.demoauth.auth;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
