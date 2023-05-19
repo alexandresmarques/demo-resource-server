@@ -12,7 +12,7 @@ public class SimpleController {
         return "Hello!";
     }
 
-    @PostMapping("/")
+    @PostMapping("/api/v2/teste")
     String helloPost(@RequestParam("message") String message) {
         return "hello: " + message;
     }
